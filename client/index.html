@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <title>Shared DrawPad</title>
+    <link type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/css.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http:////maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/drawing.js?23"></script>
+    <script src="http://localhost:4000/socket.io/socket.io.js"></script>
+    
+    <body>
+     <a href="#">Inbox <span class="badge">42</span></a>
+
+        <div id="drawingPad">
+            <!-- This is where all the code will be place dynamically -->
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(document).bind("touchmove", function(e) {
+            e.preventDefault();
+        });
+        // overriding default options
+        var options = {
+            width:800,
+            height:500
+        },
+        //init the drawpad
+        dp = new DrawingPad(options);
+        dp.init("#drawingPad");
+    </script>
+</html>
